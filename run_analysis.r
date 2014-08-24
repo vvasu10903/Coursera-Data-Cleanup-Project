@@ -54,9 +54,11 @@ testData <- cbind(subjectTestData, yTestData, xTestData)
 mergedData <- rbind(trainData, testData)
 
 # Prepare the descriptive variable names by cleaning the names loaded from the file "features.txt"
-# Basic approach to cleaning the variable names is that variables are transformed into Camel Case		# notation because the names are very long and has several words connected to each other which
+# Basic approach to cleaning the variable names is that variables are transformed into Camel Case
+# notation because the names are very long and has several words connected to each other which
 # cannot be read clearly. Variable names are made more readable by making the first letter of the word
-# capital. Special characters such as "(), -" were removed. While several ideas from tidy data approach # has been used here in cleaning	up the variable names, some are ignored to improve the
+# capital. Special characters such as "(), -" were removed. While several ideas from tidy data approach
+# has been used here in cleaning	up the variable names, some are ignored to improve the
 # readability for meaning. Variable names which show data for different axes are shown with ".Xaxis",
 # ".Yaxis", etc. at the end of the variable name. While R is not very good in handling special
 # characters in variable names, period are OK. Abbreviated names have been expanded such as "Acc" to

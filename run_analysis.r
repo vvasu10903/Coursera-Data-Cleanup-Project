@@ -58,7 +58,7 @@ mergedData <- rbind(trainData, testData)
 # notation because the names are very long and has several words connected to each other which
 # cannot be read clearly. Variable names are made more readable by making the first letter of the word
 # capital. Special characters such as "(), -" were removed. While several ideas from tidy data approach
-# has been used here in cleaning	up the variable names, some are ignored to improve the
+# has been used here in cleaning up the variable names, some are ignored to improve the
 # readability for meaning. Variable names which show data for different axes are shown with ".Xaxis",
 # ".Yaxis", etc. at the end of the variable name. While R is not very good in handling special
 # characters in variable names, period are OK. Abbreviated names have been expanded such as "Acc" to
@@ -122,7 +122,8 @@ meanStdData <- meanStdData1[, -columnsMeanStd2]
 tidyData <- cbind(subjectsActivityData, meanStdData)
   
 # Aggregate data frame meanStdData by Subjects and Activity Labels, returning average of each variable
-# for each activity and each subject. Save the data into into an independent tidy data set named        # "tidyData" 
+# for each activity and each subject. Save the data into into an independent tidy data set named
+# "tidyData" 
 
 meltedData <- melt(tidyData, id.vars = c("Subject", "Activity"))
 tidyData <- ddply(meltedData, c("Subject", "Activity", "variable"), summarise, Mean = mean(value))

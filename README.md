@@ -2,7 +2,7 @@ Coursera-Data-Cleanup-Project
 =============================
 
 ## This R script is used to read and clean a data set so that the data
-	can be used for a later analysis This script does the following:
+## can be used for a later analysis This script does the following:
 			1. read the training and test data sets
 			2. read the activity labels and descriptions of the columns
 				in the data sets
@@ -15,12 +15,12 @@ Coursera-Data-Cleanup-Project
 				 variable for each activity and subject
 			7. exports the last tidy data as a text file 
 
-Following required packages are needed during running of script for aggregating the tidy data
+* Following required packages are needed during running of script for aggregating the tidy data
 
 	library(plyr)
 	library(reshape2)
 
-Following segment of the script reads all the input data sets into R assuming that they exist in the currently set working directory
+* Following segment of the script reads all the input data sets into R assuming that they exist in the 	  currently set working directory
 
 	setwd("C:/Users/vasudev/Desktop/Coursera Project")
 	xTrainData <- read.table("X_Train.txt")
@@ -31,7 +31,7 @@ Following segment of the script reads all the input data sets into R assuming th
 	subjectTrainData <- read.table("subject_train.txt")
 	columnNames <- read.table("features.txt")			
 
-Following segment of the script replaces the activity numbers in the data with activity labels such as "Walking", etc.
+* Following segment of the script replaces the activity numbers in the data with activity labels such as "Walking", etc.
 
 	activityLabels <- read.table("activity_labels.txt")
 	factors <- factor(yTestData$V1)
